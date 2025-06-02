@@ -1,0 +1,14 @@
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 5vw;
+  border-bottom: 1px solid #000;
+}
+.btnDashboard {
+  background-color: transparent;
+  border: 1px solid #000;
+  border-radius: 20px;
+  padding: 5px;
+  font-size: 13px;
+}

@@ -1,0 +1,50 @@
+/* Osnovni izgled kalendara */
+.react-calendar {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 1rem;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover efekt na dan */
+.react-calendar__tile:hover {
+  background-color: #f0f0f0;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+/* Aktivno selektovani dan */
+.react-calendar__tile--active {
+  background-color: #0070f3;
+  color: white;
+  border-radius: 8px;
+}
+
+/* Danasnji dan */
+.react-calendar__tile--now {
+  background-color: #ffe58f;
+  border-radius: 8px;
+}
+
+/* Vikendi */
+.react-calendar__month-view__days__day--weekend {
+  color: #d10000;
+}
+.mainCalendar {
+  display: flex;
+  width: 100%;
+}
+.customCalendar {
+  width: 50%;
+  height: 80vh;
+  display: flex;
+  /* Po želji dodatni stilovi */
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+.evidentionDays {
+  width: 50%;
+}
