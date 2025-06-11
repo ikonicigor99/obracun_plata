@@ -49,7 +49,6 @@ const RadniciPage = () => {
     }, []);
 
 
-
     const kreirajRadnika = async (e) => {
         e.preventDefault();
         if (!ime || koeficijent === "" || isNaN(parseFloat(koeficijent))) {
@@ -80,7 +79,7 @@ const RadniciPage = () => {
             setKoeficijent(0.0);
 
         } catch (error) {
-            console.error('Greska pri dodavanju radnika', error.message);
+            console.error('Greska pri dodavanju radnika', error.message());
         }
 
 
@@ -102,7 +101,7 @@ const RadniciPage = () => {
                     <div key={radnik.id}>
                         <div className="ime">{radnik.ime}</div>
                         <div className="koeficijent">{radnik.koeficijent}</div>
-                        <div className="kreirano">Kreirano:{radnik.kreirano}</div>
+                        <div className="kreirano">Kreirano{radnik.kreirano}</div>
                     </div>
                 ))}
             </div>
@@ -115,13 +114,8 @@ const RadniciPage = () => {
                 </form>
 
                 {bezVrijednosti && <div> Molim da unesete validne vrijednost!!!</div>}
-
-
-
-
             </div>
         </>
-
     )
 }
 

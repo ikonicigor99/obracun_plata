@@ -13,21 +13,22 @@ const typeDefs = `
         id: ID!
         zaposleni_id: ID!
         datum: String!
-        radni_sati: Float!
+        sati: Float!
         kreirano: String!
     }
 
+    
     type Query {
         zaposleni: [Zaposleni!]!
         radni_dani: [Evidencija!]!
     }
 
     type Mutation {
-       dodajRadnik( ime: String!, koeficijent: Float!, ): Zaposleni!
+       dodajRadnik( ime: String!, koeficijent: Float! ): Zaposleni!
 
        unesiEvidenciju(
          zaposleni_id: ID!
-         radni_dan: String!
+         datum: String!
          sati: Float!
        ): Evidencija!
     }

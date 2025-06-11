@@ -1,10 +1,7 @@
 'use client';
-
-const { useState } = require("react");
 const { graphqlRequest } = require("./graphqlClient");
 
-const getRadnike = async () => {
-    const [radnici, setRadnici] = useState();
+export const getRadnike = async () => {
 
     const query = `
         query {
@@ -19,11 +16,9 @@ const getRadnike = async () => {
 
     try {
         const data = await graphqlRequest(query);
-        setRadnici(data.zaposleni);
-        console.log(radnici, "haha");
+        return data.zaposleni;
     } catch (error) {
         console.log('Greska pri fetchovanju radnika', error.message);
+        return [];
     }
 }
-
-export default getRadnike;

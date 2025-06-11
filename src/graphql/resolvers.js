@@ -18,6 +18,22 @@ export const resolvers = {
                 console.error('Greška u upitu:', error);
                 return [];
             }
+        },
+
+        radni_dani: async () => {
+            try {
+                const [radni_dani] = await pool.query('SELECT * FROM radni_dani');
+                return radni_dani.map(radni_dan => ({
+                    id: radni_dan.id,
+                    zaposleni_id: radni_dan.zaposleni_id,
+                    datum: radni_dan.datum,
+                    sati: parseFloat(radni_dan.sati),
+                    kreirano: radni_dan.kreirano.toISOString()
+                }));
+            } catch (error) {
+                console.error('Greska pri upitu', error);
+                return [];
+            }
         }
     },
 
@@ -35,15 +51,15 @@ export const resolvers = {
 
         unesiEvidenciju: async (_, { zaposleni_id, datum, sati }) => {
             const kreirano = new Date();
-            const [evidentirano] = pool.query('INSERT INTO radni_sati (zaposleni_id, datum, sati, kreirano) VALUES (?,?,?,?)', [zaposleni_id, datum, sati, kreirano]
-            );
+            const [evidentirano] = await pool.query('INSERT INTO radni_dani (zaposleni_id, datum, sati, kreirano) VALUES (?,?,?,?)', [zaposleni_id, datum, sati, kreirano]);
             return {
                 id: evidentirano.insertId,
                 zaposleni_id,
                 datum,
-                sati,
+                sati: parseFloat(sati),
                 kreirano: new Date().toISOString()
             }
         }
-    },
-};
+    }
+}
+
