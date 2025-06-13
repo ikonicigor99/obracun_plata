@@ -11,25 +11,10 @@
   width: 50%;
 }
 
-.holderbuttonRadnici {
-  width: 180px;
-  height: 180px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s;
-  border: 1px solid #000;
-  border-radius: 20px;
-}
-
-.holderbuttonRadnici:hover {
-  transform: scale(1.1);
-}
 .iconUsers {
 }
 
-.holderbuttonKalendar {
+.holderbuttons {
   width: 180px;
   height: 180px;
   display: flex;
@@ -40,8 +25,9 @@
   transition: transform 0.3s;
   border-radius: 20px;
 }
-.holderbuttonKalendar:hover {
+.holderbuttons:hover {
   transform: scale(1.1);
 }
+
 .iconCalendar {
 }
