@@ -98,11 +98,11 @@ const RadniciPage = () => {
             {ucitavanje && <div>Učitavanje...</div>}
 
             <div>
-                <Table th={["ID", "IME", "KOEFICIJENT", "KREIRANO"]} td={radnici} />
+                <Table data={radnici} />
             </div>
 
             <div>Ovdje mozete da kreirate novo radnika
-                <form suppressHydrationWarning onSubmit={kreirajRadnika} className="forma">
+                <form suppressHydrationWarning={true} onSubmit={kreirajRadnika} className="forma">
                     <input value={ime} onChange={(e) => setIme(e.target.value)} type="text" placeholder="Unesite ime radnika" />
                     <input value={koeficijent} onChange={(e) => setKoeficijent(e.target.value)} type="number" min="0.00" step="0.1" max={10} placeholder="Unesite koeficijent radnika" />
                     <button type="submit">Dodaj</button>

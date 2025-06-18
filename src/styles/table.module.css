@@ -1,0 +1,19 @@
+.headerTable {
+  width: 100%;
+  display: flex;
+}
+
+.table {
+  width: 95%;
+}
+.thead {
+  border-bottom: 1px solid #000;
+}
+.tr {
+  color: red;
+  border-bottom: 1px solid #000;
+  padding: 1px;
+}
+.td {
+  text-align: center;
+}

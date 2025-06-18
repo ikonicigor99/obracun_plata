@@ -31,7 +31,6 @@ const Kalendar = () => {
         fetchRadnike();
     }, []);
 
-    console.log(datum);
     const evidencijaDana = async (e) => {
         e.preventDefault();
 

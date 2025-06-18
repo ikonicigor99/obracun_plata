@@ -57,7 +57,7 @@ export const resolvers = {
                 zaposleni_id,
                 datum,
                 sati: parseFloat(sati),
-                kreirano: new Date().toISOString()
+                kreirano: kreirano.toISOString()
             }
         }
     }
