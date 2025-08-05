@@ -22,7 +22,7 @@ export const resolvers = {
 
         radni_dani: async () => {
             try {
-                const [radni_dani] = await pool.query('SELECT * FROM radni_dani');
+                const [radni_dani] = await pool.query('SELECT rd.id, rd.zaposleni_id, rd.datum, rd.sati, z.ime FROM radni_dani rd JOIN zaposleni z ON rd.id_zaposlenog = z.id');
                 return radni_dani.map(radni_dan => ({
                     id: radni_dan.id,
                     zaposleni_id: radni_dan.zaposleni_id,
